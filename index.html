@@ -13,10 +13,12 @@
       margin: 0;
       padding: 0;
       color: #333;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 480px;
+      width: 90%;
+      max-width: 600px;
       margin: 20px auto;
       background: #ffffff;
       padding: 25px 20px;
@@ -30,7 +32,9 @@
     }
 
     .logo {
-      width: 180px;
+      width: 45%;
+      max-width: 200px;
+      min-width: 120px;
       border-radius: 14px;
       display: block;
       margin: 0 auto 15px;
@@ -43,7 +47,7 @@
 
     h2 {
       color: #f57c00;
-      font-size: 20px;
+      font-size: clamp(18px, 4vw, 24px);
       margin-top: 20px;
       text-align: center;
       position: relative;
@@ -60,7 +64,7 @@
     }
 
     p, li {
-      font-size: 15px;
+      font-size: clamp(14px, 3.5vw, 16px);
       color: #444;
       line-height: 1.6;
     }
@@ -76,7 +80,7 @@
 
     .fruit-img {
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       display: block;
       margin: 15px auto 20px;
       border-radius: 14px;
@@ -101,15 +105,15 @@
     .btn {
       display: block;
       width: 100%;
-      max-width: 320px;
+      max-width: 340px;
       margin: 15px auto;
-      padding: 14px;
+      padding: 14px 16px;
       font-weight: bold;
       text-align: center;
       border-radius: 30px;
       color: #fff;
       text-decoration: none;
-      font-size: 16px;
+      font-size: clamp(14px, 3.8vw, 17px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
     }
@@ -145,7 +149,7 @@
     .footer {
       text-align: center;
       margin-top: 25px;
-      font-size: 14px;
+      font-size: clamp(12px, 3.3vw, 14px);
       color: #666;
       border-top: 1px solid #eee;
       padding-top: 15px;
@@ -153,6 +157,41 @@
 
     .footer b {
       color: #2e7d32;
+    }
+
+    /* Extra small devices */
+    @media (max-width: 360px) {
+      .container {
+        width: 94%;
+        padding: 18px;
+      }
+      h2 {
+        font-size: 17px;
+      }
+      .btn {
+        padding: 12px;
+        font-size: 14px;
+      }
+      .logo {
+        width: 55%;
+      }
+    }
+
+    /* Tablets */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .container {
+        max-width: 700px;
+        padding: 35px;
+      }
+      .logo {
+        width: 160px;
+      }
+      .fruit-img {
+        max-width: 400px;
+      }
+      .btn {
+        max-width: 360px;
+      }
     }
   </style>
 </head>
@@ -202,7 +241,7 @@
     <p>📞 After payment, please confirm on WhatsApp with a screenshot for faster setup.</p>
 
     <!-- WhatsApp CTA -->
-    <a href="https://wa.me/7382602886?text=Hi%20Fruit%20Express!%20I%20want%20to%20subscribe%20🍉" 
+    <a href="https://wa.me/917382602886?text=Hi%20Fruit%20Express!%20I%20want%20to%20subscribe%20🍉" 
        target="_blank" class="btn whatsapp-btn">
        💬 Chat with Fruit Express
     </a>
