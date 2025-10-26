@@ -16,23 +16,24 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 480px;
+      margin: 20px auto;
       background: #ffffff;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      overflow: hidden;
+      padding: 25px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
     .header {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .logo {
-      width: 160px;
-      border-radius: 12px;
+      width: 180px;
+      border-radius: 14px;
+      display: block;
+      margin: 0 auto 15px;
       transition: transform 0.3s ease;
     }
 
@@ -42,10 +43,10 @@
 
     h2 {
       color: #f57c00;
-      font-size: 22px;
-      margin-top: 35px;
+      font-size: 20px;
+      margin-top: 20px;
+      text-align: center;
       position: relative;
-      display: inline-block;
     }
 
     h2::after {
@@ -54,14 +55,14 @@
       height: 3px;
       width: 60%;
       background: linear-gradient(90deg, #fbc02d, #f57c00);
-      margin-top: 5px;
+      margin: 5px auto 0;
       border-radius: 2px;
     }
 
     p, li {
-      font-size: 16px;
+      font-size: 15px;
       color: #444;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     ul {
@@ -73,42 +74,48 @@
       color: #43a047;
     }
 
-    .plans {
-      background: #f1f8e9;
-      padding: 15px 20px;
-      border-left: 6px solid #66bb6a;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-top: 20px;
-    }
-
     .fruit-img {
-      width: 220px;
-      float: right;
-      margin: 10px 0 15px 20px;
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 15px auto 20px;
       border-radius: 14px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
     .fruit-img:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
-    /* WhatsApp Button */
-    .whatsapp-btn, .form-btn {
-      display: inline-block;
-      color: #fff;
-      padding: 12px 25px;
+    .plans {
+      background: #f1f8e9;
+      padding: 15px 18px;
+      border-left: 6px solid #66bb6a;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-top: 20px;
+    }
+
+    /* Buttons (WhatsApp, Form, Payment) */
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 15px auto;
+      padding: 14px;
       font-weight: bold;
+      text-align: center;
       border-radius: 30px;
+      color: #fff;
       text-decoration: none;
       font-size: 16px;
-      margin: 20px auto 10px;
-      display: block;
-      width: fit-content;
-      transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .whatsapp-btn {
@@ -117,7 +124,6 @@
 
     .whatsapp-btn:hover {
       background: #1EBE5D;
-      transform: translateY(-2px);
     }
 
     .form-btn {
@@ -126,13 +132,20 @@
 
     .form-btn:hover {
       background: linear-gradient(90deg, #fb8c00, #fdd835);
-      transform: translateY(-2px);
+    }
+
+    .payment-btn {
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+    }
+
+    .payment-btn:hover {
+      background: linear-gradient(90deg, #43A047, #66BB6A);
     }
 
     .footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 15px;
+      margin-top: 25px;
+      font-size: 14px;
       color: #666;
       border-top: 1px solid #eee;
       padding-top: 15px;
@@ -141,29 +154,18 @@
     .footer b {
       color: #2e7d32;
     }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 25px;
-      }
-      .fruit-img {
-        float: none;
-        display: block;
-        margin: 20px auto;
-        width: 80%;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
+    
     <!-- Logo -->
     <div class="header">
       <img src="logo1.jpg" alt="Fruit Express Logo" class="logo">
     </div>
 
     <!-- Product Section -->
-    <h2>Our Fresh Fruit Bowl</h2>
+    <h2>Your Daily Dose of Freshness! 🍉🥭</h2>
     <img src="fruit_image.jpg" alt="Fruit Bowl" class="fruit-img">
     <p>Each bowl includes <b>6 premium fruits</b> and <b>1 healthy add-on</b> for a perfect start to your day:</p>
     <ul>
@@ -187,21 +189,34 @@
       <p><b>Timings:</b> 7–9 AM OR 6–8 PM</p>
     </div>
 
+    <!-- Payment Section -->
+    <h2>Make a Payment</h2>
+    <p>You can pay securely using UPI or any major payment app:</p>
+
+    <a href="upi://pay?pa=raja425shekar3@ybl&pn=Fruit%20Express&am=480&cu=INR&tn=Weekly%20Fruit%20Bowl%20Plan" 
+       class="btn payment-btn">💸 Pay ₹480 for Weekly Plan</a>
+
+    <a href="upi://pay?pa=raja425shekar3@ybl&pn=Fruit%20Express&am=1920&cu=INR&tn=Monthly%20Fruit%20Bowl%20Plan" 
+       class="btn payment-btn">💸 Pay ₹1920 for Monthly Plan</a>
+
+    <p>📞 After payment, please confirm on WhatsApp with a screenshot for faster setup.</p>
+
     <!-- WhatsApp CTA -->
-    <a href="https://wa.me/7382602886?text=Hi%20Fruit%20Express!%20I%20want%20to%20subscribe%20🍉" target="_blank" class="whatsapp-btn">
-      💬 Chat with Fruit Express on WhatsApp
+    <a href="https://wa.me/7382602886?text=Hi%20Fruit%20Express!%20I%20want%20to%20subscribe%20🍉" 
+       target="_blank" class="btn whatsapp-btn">
+       💬 Chat with Fruit Express
     </a>
 
     <!-- Google Form CTA -->
-    <a href="https://forms.gle/ZiCjCm1AmrgkXnRi7" target="_blank" class="form-btn">
-      📝 Fill Order Form (Google Form)
+    <a href="https://forms.gle/ZiCjCm1AmrgkXnRi7" target="_blank" class="btn form-btn">
+      📝 Order Here!
     </a>
 
     <!-- Footer -->
     <div class="footer">
       🍍 Freshness delivered daily with <b>Fruit Express</b> 🚴‍♂️  
     </div>
+
   </div>
 </body>
 </html>
-
